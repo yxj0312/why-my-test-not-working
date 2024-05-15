@@ -74,12 +74,12 @@ class ProductControllerTest extends WebTestCase
         $fixture->setPrice('My Title');
         $fixture->setQuantity('My Title');
         $fixture->setImage('My Title');
-        $fixture->setIs_featured('My Title');
-        $fixture->setIs_active('My Title');
-        $fixture->setMeta_title('My Title');
-        $fixture->setMeta_description('My Title');
+        $fixture->setIsFeatured('My Title');
+        $fixture->setIsActive('My Title');
+        $fixture->setMetaTitle('My Title');
+        $fixture->setMetaDescription('My Title');
         $fixture->setSlug('My Title');
-        $fixture->setFeature_image('My Title');
+        $fixture->setFeatureImage('My Title');
 
         $this->manager->persist($fixture);
         $this->manager->flush();
@@ -101,12 +101,12 @@ class ProductControllerTest extends WebTestCase
         $fixture->setPrice('Value');
         $fixture->setQuantity('Value');
         $fixture->setImage('Value');
-        $fixture->setIs_featured('Value');
-        $fixture->setIs_active('Value');
-        $fixture->setMeta_title('Value');
-        $fixture->setMeta_description('Value');
+        $fixture->setIsFeatured('Value');
+        $fixture->setIsActive('Value');
+        $fixture->setMetaTitle('Value');
+        $fixture->setMetaDescription('Value');
         $fixture->setSlug('Value');
-        $fixture->setFeature_image('Value');
+        $fixture->setFeatureImage('Value');
 
         $this->manager->persist($fixture);
         $this->manager->flush();
@@ -153,12 +153,12 @@ class ProductControllerTest extends WebTestCase
         $fixture->setPrice('Value');
         $fixture->setQuantity('Value');
         $fixture->setImage('Value');
-        $fixture->setIs_featured('Value');
-        $fixture->setIs_active('Value');
-        $fixture->setMeta_title('Value');
-        $fixture->setMeta_description('Value');
+        $fixture->setIsFeatured('Value');
+        $fixture->setIsActive('Value');
+        $fixture->setMetaTitle('Value');
+        $fixture->setMetaDescription('Value');
         $fixture->setSlug('Value');
-        $fixture->setFeature_image('Value');
+        $fixture->setFeatureImage('Value');
 
         $this->manager->persist($fixture);
         $this->manager->flush();
