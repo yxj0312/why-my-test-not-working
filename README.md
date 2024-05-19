@@ -74,3 +74,5 @@ The error message you're encountering indicates that the table `product` does no
   ```
 
 By following these steps, you can set up a test environment in Symfony that mirrors your development setup but uses an isolated database, ensuring your tests can run independently and without side effects.
+
+test 
