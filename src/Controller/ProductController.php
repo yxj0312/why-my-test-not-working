@@ -14,6 +14,12 @@ use Symfony\Component\Routing\Attribute\Route;
 #[Route('/product')]
 class ProductController extends AbstractController
 {
+    #[Route('/test', name: 'app_product_test', methods: ['GET'])]
+    public function test(): Response
+    {
+        return new Response('<html><body>Test route is working!</body></html>');
+    }
+    
     #[Route('/', name: 'app_product_index', methods: ['GET'])]
     public function index(ProductRepository $productRepository): Response
     {
