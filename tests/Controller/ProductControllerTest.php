@@ -2,9 +2,11 @@
 
 namespace App\Test\Controller;
 
+use App\DataFixtures\AppFixtures;
 use App\Entity\Product;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
+use Liip\TestFixturesBundle\Services\DatabaseToolCollection;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
@@ -15,11 +17,19 @@ class ProductControllerTest extends WebTestCase
     private EntityRepository $repository;
     private string $path = '/product/';
 
+    private $databaseTool;
+
     protected function setUp(): void
     {
         $this->client = static::createClient();
         $this->manager = static::getContainer()->get('doctrine')->getManager();
         $this->repository = $this->manager->getRepository(Product::class);
+
+        // Get the database tool service
+        $this->databaseTool = self::getContainer()->get(DatabaseToolCollection::class)->get();
+
+         // Load the fixtures
+        $this->databaseTool->loadFixtures([AppFixtures::class]);
 
         foreach ($this->repository->findAll() as $object) {
             $this->manager->remove($object);
@@ -35,8 +45,17 @@ class ProductControllerTest extends WebTestCase
         self::assertResponseStatusCodeSame(200);
         self::assertPageTitleContains('Product index');
 
+        // Perform additional assertions
+        // Example: Check if the number of products listed matches the number of fixtures loaded
+        self::assertCount(10, $crawler->filter('.product-item'));
+
         // Use the $crawler to perform additional assertions e.g.
         // self::assertSame('Some text on the page', $crawler->filter('.p')->first());
+
+        // Check if specific text is present
+        for ($i = 1; $i <= 10; $i++) {
+            self::assertSelectorTextContains('.product-item', 'Product ' . $i);
+        }
     }
 
     public function testNew(): void

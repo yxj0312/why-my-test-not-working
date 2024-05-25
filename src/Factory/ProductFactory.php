@@ -14,8 +14,10 @@ class ProductFactory
 
         for ($i = 0; $i < $count; $i++) {
             $product = new Product();
-            $product->setName($faker->word);
-            $product->setDescription($faker->sentence);
+            // $product->setName($faker->word);
+            // $product->setDescription($faker->sentence);
+            $product->setName('Product ' . $i);
+            $product->setDescription('Description for product ' . $i);
             $product->setPrice($faker->randomFloat(2, 10, 100));
             $product->setQuantity($faker->numberBetween(1, 100));
             $product->setImage($faker->imageUrl());
