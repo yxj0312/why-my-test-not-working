@@ -8,24 +8,21 @@ use Doctrine\Persistence\ObjectManager;
 
 class AppFixtures extends Fixture
 {
-    // public function __construct(
-    // )
-    // {
-        
-    // }
-    public function load(ObjectManager $manager): void
+    private $productFactory;
+
+    public function __construct(ProductFactory $productFactory)
     {
-        $this->loadProducts($manager);
+        $this->productFactory = $productFactory;
     }
 
-    private function loadProducts(ObjectManager $manager): void
+    public function load(ObjectManager $manager): void
     {
-        // Use a factory to create 10 products with randomized data
-        $products = ProductFactory::create(10);
-
+        $products = $this->productFactory->create(10);
+        
         foreach ($products as $product) {
             $manager->persist($product);
         }
+
         $manager->flush();
     }
 }
