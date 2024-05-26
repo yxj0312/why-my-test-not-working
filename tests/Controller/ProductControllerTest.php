@@ -23,19 +23,12 @@ class ProductControllerTest extends WebTestCase
     {
         $this->client = static::createClient();
         $this->manager = static::getContainer()->get('doctrine')->getManager();
-        $this->repository = $this->manager->getRepository(Product::class);
 
         // Get the database tool service
         $this->databaseTool = self::getContainer()->get(DatabaseToolCollection::class)->get();
 
-         // Load the fixtures
+        // Load the fixtures
         $this->databaseTool->loadFixtures([AppFixtures::class]);
-
-        foreach ($this->repository->findAll() as $object) {
-            $this->manager->remove($object);
-        }
-
-        $this->manager->flush();
     }
 
     public function testIndex(): void
@@ -46,11 +39,7 @@ class ProductControllerTest extends WebTestCase
         self::assertPageTitleContains('Product index');
 
         // Perform additional assertions
-        // Example: Check if the number of products listed matches the number of fixtures loaded
         self::assertCount(10, $crawler->filter('.product-item'));
-
-        // Use the $crawler to perform additional assertions e.g.
-        // self::assertSame('Some text on the page', $crawler->filter('.p')->first());
 
         // Check if specific text is present
         for ($i = 1; $i <= 10; $i++) {
