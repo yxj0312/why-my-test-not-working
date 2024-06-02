@@ -8,7 +8,7 @@ use Doctrine\Persistence\ObjectManager;
 
 class AppFixtures extends Fixture
 {
-    private $productFactory;
+    private ProductFactory $productFactory;
 
     public function __construct(ProductFactory $productFactory)
     {
