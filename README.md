@@ -75,10 +75,10 @@ The error message you're encountering indicates that the table `product` does no
 
 By following these steps, you can set up a test environment in Symfony that mirrors your development setup but uses an isolated database, ensuring your tests can run independently and without side effects.
 
-test 
-fortuna
-test
-test
-TEST
-test
-test 
+In Symfony, the services.yaml file in the config/test directory is used to define service configurations specifically for the test environment. This allows you to configure services differently in the test environment compared to the development or production environments.
+
+The services.yaml file in the config/test directory is loaded when Symfony runs tests, overriding any configurations defined in the regular services.yaml file. This separation allows you to define mock services, disable certain services, or configure services differently for testing purposes.
+
+If you don't have a services.yaml file in the config/test directory, Symfony will fall back to using the regular services.yaml file, which may not be ideal for testing scenarios where you want to isolate certain services or configure them differently.
+
+So, even if you have defined your environment variables for the test environment in the .env.test file, it's still a good practice to have a separate services.yaml file in the config/test directory for configuring services specifically for testing purposes.

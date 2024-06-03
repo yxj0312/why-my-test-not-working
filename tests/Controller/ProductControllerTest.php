@@ -40,11 +40,6 @@ class ProductControllerTest extends WebTestCase
 
         // Perform additional assertions
         self::assertCount(10, $crawler->filter('.product-item'));
-
-        // Check if specific text is present
-        // for ($i = 0; $i < 10; $i++) {
-        //     self::assertSelectorTextContains('.product-item', 'Product ' . $i);
-        // }
     }
 
     public function testNew(): void
