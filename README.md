@@ -82,3 +82,5 @@ The services.yaml file in the config/test directory is loaded when Symfony runs 
 If you don't have a services.yaml file in the config/test directory, Symfony will fall back to using the regular services.yaml file, which may not be ideal for testing scenarios where you want to isolate certain services or configure them differently.
 
 So, even if you have defined your environment variables for the test environment in the .env.test file, it's still a good practice to have a separate services.yaml file in the config/test directory for configuring services specifically for testing purposes.
+
+symfony cast buy or buy?
