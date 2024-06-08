@@ -16,7 +16,10 @@ class ProductTest extends TestCase
         $product->setPrice(19.99);
 
         self::assertSame('Example Product', $product->getName());
-
     }
 
+    public function testAnotherDate(): void
+    {
+      
+    }
 }
