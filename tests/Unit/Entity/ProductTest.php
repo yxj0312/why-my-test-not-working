@@ -12,14 +12,9 @@ class ProductTest extends TestCase
     public function testCanGetAndSetData(): void
     {
       $product = new Product();
-        $product->setName('Example Product');
-        $product->setPrice(19.99);
+      $product->setName('Example Product');
+      $product->setPrice(19.99);
 
-        self::assertSame('Example Product', $product->getName());
-    }
-
-    public function testAnotherDate(): void
-    {
-      
+      self::assertSame('Example Product', $product->getName());
     }
 }
