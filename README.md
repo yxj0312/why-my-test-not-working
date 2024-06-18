@@ -1,4 +1,4 @@
-The error message you're encountering indicates that the table `product` does not exist in the database being used for testing. To set up a proper test environment in a Symfony project, follow these steps:
+I'mThe error message you're encountering indicates that the table `product` does not exist in the database being used for testing. To set up a proper test environment in a Symfony project, follow these steps:
 
 ### Step 1: Configure the Test Environment
 
@@ -86,3 +86,8 @@ So, even if you have defined your environment variables for the test environment
 symfony cast buy or buy?
 symfony cast out-of-date?
 test
+test
+em 
+em 
+em
+em
