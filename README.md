@@ -1,4 +1,4 @@
-okI'mThe error message you're encountering indicates that the table `product` does not exist in the database being used for testing. To set up a proper test environment in a Symfony project, follow these steps:
+okokI'mThe error message you're encountering indicates that the table `product` does not exist in the database being used for testing. To set up a proper test environment in a Symfony project, follow these steps:
 
 ### Step 1: Configure the Test Environment
 
@@ -101,3 +101,4 @@ test
 Olympic Olympic 
 test 
 test
+Theorie 
